@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🦁 아기사자 멤버 관리</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🦁</span>
+        <span class="logo-text">LIKELION</span>
+      </div>
+      <div class="header-meta">
+        <span class="total-badge">
+          총 <strong id="total-count">0</strong>명
+        </span>
+        <button id="toggle-form-btn" class="btn btn-primary">+ 아기사자 추가</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 추가 폼 (토글) -->
+  <section class="form-section" id="form-section" aria-hidden="true">
+    <div class="form-card">
+      <h2 class="form-title">새 아기사자 등록</h2>
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="input-name">이름 <span class="required">*</span></label>
+          <input type="text" id="input-name" placeholder="이름을 입력하세요" />
+          <span class="error-msg" id="error-name"></span>
+        </div>
+
+        <div class="field">
+          <label for="input-part">파트 <span class="required">*</span></label>
+          <select id="input-part">
+            <option value="">-- 파트 선택 --</option>
+            <option value="기획">기획</option>
+            <option value="디자인">디자인</option>
+            <option value="프론트엔드">프론트엔드</option>
+            <option value="백엔드">백엔드</option>
+          </select>
+          <span class="error-msg" id="error-part"></span>
+        </div>
+
+        <div class="field full-width">
+          <label for="input-skills">관심기술 <span class="required">*</span></label>
+          <input type="text" id="input-skills" placeholder="예: React, JavaScript, Figma (쉼표로 구분)" />
+          <span class="error-msg" id="error-skills"></span>
+        </div>
+
+        <div class="field full-width">
+          <label for="input-intro">한줄소개 <span class="required">*</span></label>
+          <input type="text" id="input-intro" placeholder="나를 한마디로 표현해보세요!" />
+          <span class="error-msg" id="error-intro"></span>
+        </div>
+
+      </div>
+      <div class="form-actions">
+        <button id="cancel-btn" class="btn btn-secondary">취소</button>
+        <button id="submit-btn" class="btn btn-primary">등록하기 🦁</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 카드 목록 -->
+  <main class="main-content">
+    <div class="empty-state" id="empty-state">
+      <span class="empty-icon">🦁</span>
+      <p>아직 등록된 아기사자가 없어요!</p>
+      <p>위 버튼을 눌러 첫 번째 멤버를 추가해보세요.</p>
+    </div>
+    <div class="cards-grid" id="cards-grid"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
